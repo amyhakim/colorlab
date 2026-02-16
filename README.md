@@ -24,7 +24,7 @@ This application allows a user to login and add colors to their archive. You can
 
 1. A DigitalOcean-hosted Ubuntu server running an Apache/MySQL/PHP environment, linked with a GoDaddy domain (hakimcolorlab.xyz).
 
-⚠️ Assumptions, Limitations, AI Usage
+# ⚠️ Assumptions, Limitations, AI Usage
 
 1. Runs on Apache server, expected browser should be able to support modern standard Javascript
    
