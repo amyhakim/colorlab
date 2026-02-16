@@ -1,14 +1,14 @@
-#🎨 Color Website
+# 🎨 Color Website
 
 This application allows a user to login and add colors to their archive. You can also search for colors you currently have stored.
 
-#🛠️ Technologies
+# 🛠️ Technologies
 
 **Frontend**: HTML, CSS, Javascript
 
 **Backend**: PHP, MYSQL database
 
-#📖 How to Use
+# 📖 How to Use
 
 1. Open URL: http://hakimcolorlab.xyz/
    
@@ -24,7 +24,7 @@ This application allows a user to login and add colors to their archive. You can
 
 1. A DigitalOcean-hosted Ubuntu server running an Apache/MySQL/PHP environment, linked with a GoDaddy domain (hakimcolorlab.xyz).
 
-#⚠️ Assumptions, Limitations, AI Usage
+# ⚠️ Assumptions, Limitations, AI Usage
 
 1. Runs on Apache server, expected browser should be able to support modern standard Javascript
    
