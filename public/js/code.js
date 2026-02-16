@@ -1,4 +1,4 @@
-const urlBase = 'http://hakimcolorlab.xyz/LAMPAPI';
+const urlBase = 'http://hakimcolorlab.xyz/api';
 const extension = 'php';
 
 let userId = 0;
