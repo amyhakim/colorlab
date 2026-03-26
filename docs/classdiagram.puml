@@ -1,0 +1,62 @@
+@startuml
+
+package "Frontend" {
+  class AppClient <<client>> {
+    - urlBase : string
+    - extension : string = 'php'
+    - userId : int = 0
+    - firstName : string
+    - lastName : string
+    --
+    + doLogin() : void
+    + doLogout() : void
+    + addColor() : void
+    + searchColor() : void
+    - saveCookie() : void
+    - readCookie() : void
+    - buildUrl(endpoint) : string
+    - sendXHR(url, payload) : void
+    - parseResponse(json) : object
+    - redirectTo(page) : void
+  }
+}
+
+package "Backend APIs" {
+  class API_Logic <<PHP class>> {
+    + Login.php
+    + AddColor.php
+    + SearchColors.php
+    --
+    + handleLogin(login, pw) : json
+    + handleAddColor(color, uid) : json
+    + handleSearch(query, uid) : json
+    - getRequestInfo() : array
+    - returnWithError(err) : json
+  }
+}
+
+package "Database Schema" {
+  class Users <<entity>> {
+    + ID : int {PK, auto}
+    + FirstName : string
+    + LastName : string
+    + Login : string {unique}
+    + Password : string
+    + SessionCookie : string
+    + CookieExpiry : datetime
+  }
+
+  class Colors <<entity>> {
+    + ID : int {PK, auto}
+    + Name : string
+    + UserID : int {FK -> Users.ID}
+  }
+}
+
+AppClient ..> API_Logic   : HTTP POST
+AppClient ..> Users       : reads/writes cookie
+API_Logic ..> Users       : queries
+API_Logic ..> Colors      : queries
+Users "1" *-- "0..*" Colors : owns
+
+@enduml
